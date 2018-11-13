@@ -1,0 +1,33 @@
+@font-face {
+  font-family:"Cerebri-Regular";
+  src: url('../assets/fonts/CerebriSans-Regular.ttf');
+}
+
+body {
+  font-family: "Cerebri-Regular"
+    margin: 0 auto;
+    margin-top: 0;
+    background-color: #fffffa;
+}
+
+nav {
+    text-align: right;
+    font-size: 15px;
+    padding: 10px, 10px, 10px, 10px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #fffffa;
+}
+
+nav a {
+  color: #0AC4BA;
+}
+
+.logo {
+float: left;
+position: relative;
+height: 80px;
+width: 80px;
+
+}
