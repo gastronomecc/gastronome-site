@@ -1,0 +1,254 @@
+/* CUSTOM FONT FACES */
+@font-face {
+  font-family: "Cerebri-Regular";
+  src: url('../assets/fonts/Cerebri-Sans/CerebriSans-Regular.ttf');
+}
+
+@font-face {
+  font-family: "Cerebri-Bold";
+  src: url('../assets/fonts/Cerebri-Sans/CerebriSans-Bold.ttf');
+}
+
+@font-face {
+  font-family: "Cerebri-Book";
+  src: url('../assets/fonts/Cerebri-Sans/CerebriSans-Book.ttf');
+}
+
+@font-face {
+  font-family: "BebasNeue-Regular";
+  src: url('../assets/fonts/BebasNeue-Regular.ttf');
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* HTML and BODY */
+html {
+  -webkit-font-smoothing: antialiased;
+  font-family: "Cerebri-Regular", sans-serif;
+  font-size: 1em;
+}
+
+body {
+  font-family: "Cerebri-Regular", sans-serif;
+  margin: 0 auto;
+}
+
+.logo {
+  width: 3em;
+  position: fixed;
+  margin-bottom: 0;
+  margin-top: -5px;
+  margin-left: 40px;
+  margin-right: 0;
+  z-index: 100;
+}
+
+nav {
+  transition: all 0.6s ease-out;
+  display: block;
+  position: fixed;
+  top: 0;
+  font-size: 14px;
+  z-index: 99;
+  padding-top: 20px;
+  width: 100%;
+  padding-bottom: 10px;
+  background-color: white;
+  padding-right: 20px;
+}
+
+.nav--link {
+  text-align: right;
+}
+
+nav a {
+  font-family: "Cerebri-Bold", sans-serif;
+  text-decoration: none;
+  padding: 20px 15px;
+  color: #0C716B;
+  font-size: 1.2em;
+  display: inline-block;
+  margin-left: 25px;
+  margin-right: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+  position: relative;
+}
+
+nav a::before, nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #0C716B;
+}
+
+nav a::before {
+  opacity: 0;
+  -webkit-transform: translateY(-8px);
+          transform: translateY(-8px);
+  transition: opacity 0s, -webkit-transform 0s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: transform 0s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0s;
+  transition: transform 0s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0s, -webkit-transform 0s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+nav a::after {
+  opacity: 0;
+  -webkit-transform: translateY(4px);
+          transform: translateY(4px);
+  transition: opacity 0.2s, -webkit-transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.2s;
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.2s, -webkit-transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+nav a:hover::before, nav a:hover::after {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.project--link:hover::before {
+  transition: opacity 0.2s, -webkit-transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.2s;
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.2s, -webkit-transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.project--link:hover::after {
+  transition: opacity 0s 0.2s, -webkit-transform 0s 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: transform 0s 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0s 0.2s;
+  transition: transform 0s 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0s 0.2s, -webkit-transform 0s 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+nav.change {
+  box-shadow: 0px 0px 3px #969696;
+  transition: all ease .2s
+}
+
+/* Container */
+.container {
+  margin-top: 200px;
+}
+
+/* Introduction */
+.intro {
+  height: calc(100vh - 50px);
+  margin-top: 100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.intro--heading {
+  font-family: "Cerebri-Bold", sans-serif;
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top: 7%;
+  font-size: 2.5em;
+}
+
+.intro--background {
+  position: absolute;
+  margin: 0 auto;
+}
+
+.intro--description {
+  font-family: "Cerebri-Book", sans-serif;
+}
+
+.intro--image {
+  max-width: 50%;
+}
+
+/* Features */
+.features {
+  min-height: calc(100% - 50px);
+  color: #0C716B;
+  margin: 13%;
+}
+
+.features--feature {
+  margin-bottom: 500px;
+}
+
+.features--heading {
+  font-size: 1.8em;
+  font-family: "Cerebri-Bold", sans-serif;
+  border-bottom: 10px solid #0C716B;
+  line-height: 0;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.features--title {
+  font-family: 'BebasNeue-Regular', sans-serif;
+  letter-spacing: 4px;
+  font-size: 2.3em;
+  margin-right: 50px;
+}
+
+.features--description {
+  font-family: 'CerebriSans-Book', sans-serif;
+  line-height: 25px;
+  font-size: 1.1em;
+}
+
+.features--odd .features--description {
+  margin-left: 54%;
+  max-width: 500px;
+}
+
+.features--even .features--description {
+  max-width: 500px;
+  margin-left: 3%;
+}
+
+.features--description {
+  margin: 10px 0;
+}
+
+.features--odd .feature--image {
+  max-width: 28%;
+  float: left;
+  margin: 0 100px;
+}
+
+.features--odd .feature--number {
+  max-width: 5%;
+  float: left;
+  margin: 10px 0;
+}
+
+.features--even .feature--image {
+  max-width: 28%;
+  float: right;
+  margin: 0 100px;
+}
+
+.features--even .feature--number {
+  max-width: 5%;
+  float: right;
+}
+
+/* Footer */
+.footer--div {
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  background-color: #0C716B;
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: -5%;
+}
+
+.footer--div h3, .footer--div p {
+  margin: 0.3em;
+}
+
+.footer--div h3 {
+  letter-spacing: 3px;
+}

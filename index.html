@@ -1,20 +1,96 @@
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
+
 <head>
-    <meta charset="utf-8" />
-    <meta name="author" content="Gastronome"/>
-    <meta name="description" content="Gastronome"/>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Meal planning for everyone. A healthy lifestyle for all. ✨">
 
-    <title>Gastronome</title>
-    <link rel="stylesheet" href="css/styles.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta name="og:type" content="website">
+  <meta name="og:title" content="Gastronome">
+  <meta name="og:description" content="Meal planning for everyone. A healthy lifestyle for all. ✨">
+  <meta name="og:url" content="https://www.gastronome.cc/">
 
-    <script src="https://www.w3schools.com/lib/w3.js"></script>
+  <meta name="twitter:card" content="website">
+  <meta name="twitter:title" content="Gastronome">
+  <meta name="twitter:description" content="Meal planning for everyone. A healthy lifestyle for all. ✨">
+  <meta name="twitter:url" content="https://www.gastronome.cc/">
+
+  <link rel="shortcut icon" type="image/png" href="assets/images/logo.svg"/>
+  <link rel="stylesheet" href="css/main.css">
+  <link href="https://fonts.googleapis.com/css?family=Oswald:400" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="scripts/nav-scroll.js"></script>
+
+  <title>Gastronome</title>
 </head>
+
 <body>
-  <nav>
-    <img class="logo" src="logo.jpeg">
-    <a href="login.html">Sign In</a>
-    <a href="register.html">Sign Up</a>
-  </nav>
+    <nav>
+      <img src="assets/images/logo.svg" alt="logo" class="logo"/>
+      <div class="nav--link">
+        <a href="#intro">Home</a>
+        <a href="#about--us">About Us</a>
+        <a href="#tools">Features</a>
+        <a href="login-page.html">Login</a>
+      </div>
+    </nav>
+
+    <div class="container">
+      <img src="assets/images/background.svg" alt="background-image" class="intro--background"/>
+      <div class="intro">
+        <h1 class="intro--heading">The Visual Meal Planning App</h1>
+        <p class="intro--description">Keep all your meal plans in one delightful place.</p>
+        <img src="assets/images/recipe.png" alt="recipe" class="intro--image">
+      </div>
+
+      <div class="features">
+        <div class="features--heading">
+          <h2>FEATURES</h2>
+        </div>
+
+        <div class="features--feature features--odd">
+          <img src="./assets/images/no-1.svg" alt="number" class="feature--number">
+          <img src="./assets/images/predictive.png" alt="predictive" class="feature--image">
+          <div class="features--details">
+            <h1 class="features--title">— Predictive Analytics</h1>
+
+            <p class="features--description select">
+              Gastronome helps you to track your weekly progress to make sure you are keeping your diet on track.<br><br>
+              Depending on your weight and health goals, Gastronome leverages on predictive analytics to accurately estimate your weight weekly.
+            </p>
+          </div>
+        </div>
+        <div class="features--feature features--even">
+          <img src="./assets/images/no-2.svg" alt="number" class="feature--number">
+          <img src="./assets/images/database.png" alt="database" class="feature--image">
+          <div class="features--details">
+            <h1 class="features--title">— Abundance of Recipes</h1>
+
+            <p class="features--description select">
+              Gastronome’s large database of recipes are sure to satisfy most of your tastebuds.<br><br>
+              Our recipes are curated with love, and you will definitely find some you really enjoy making!
+            </p>
+          </div>
+        </div>
+
+        <div class="features--feature features--odd last">
+          <img src="./assets/images/no-3.svg" alt="number" class="feature--number">
+          <img src="./assets/images/add-to-meal.png" alt="add to meal" class="feature--image">
+          <div class="features--details">
+            <h1 class="features--title">— Add to Meal Plans</h1>
+
+            <p class="features--description select">
+              Adding recipes to your meal plan has never been so easy with Gastronome.<br><br>
+              We help you track your progress and log your meals for a better and more personalised experience.
+          </div>
+        </div>
+      </div>
+
+      <div class="footer--div">
+        <h3>hello@gastronome.cc</h3>
+        <p class="footer">&copy; Copyright <script>document.write(new Date().getFullYear())</script>, Gastronome</p>
+      </div>
+    </div>
 </body>
 </html>
