@@ -203,11 +203,11 @@ header {
 }
 
 .recipes--img {
-    width: 20%;
+    max-width: 20%;
 }
 
 .recipes--gallery {
-    width: 100%;
+    max-width: 100%;
     cursor: pointer;
 }
 
