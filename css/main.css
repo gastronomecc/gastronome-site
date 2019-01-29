@@ -1,22 +1,21 @@
 /* CUSTOM FONT FACES */
 @font-face {
-  font-family: "Cerebri-Regular";
-  src: url('../assets/fonts/Cerebri-Sans/CerebriSans-Regular.ttf');
+  font-family: "Avenir-Medium";
+  src: url('../assets/fonts/Avenir/Avenir-Medium.ttf');
 }
 
 @font-face {
-  font-family: "Cerebri-Bold";
-  src: url('../assets/fonts/Cerebri-Sans/CerebriSans-Bold.ttf');
+  font-family: "Avenir-Heavy";
+  src: url('../assets/fonts/Avenir/Avenir-Heavy.ttf');
 }
 
 @font-face {
-  font-family: "Cerebri-Book";
-  src: url('../assets/fonts/Cerebri-Sans/CerebriSans-Book.ttf');
+  font-family: "Avenir-Black";
+  src: url('../assets/fonts/Avenir/Avenir-Black.ttf');
 }
 
-@font-face {
-  font-family: "BebasNeue-Regular";
-  src: url('../assets/fonts/BebasNeue-Regular.ttf');
+:root {
+  --green: #0C716B;
 }
 
 * {
@@ -26,67 +25,77 @@
 /* HTML and BODY */
 html {
   -webkit-font-smoothing: antialiased;
-  font-family: "Cerebri-Regular", sans-serif;
+  -webkit-text-rendering: optimizeLegibility;
   font-size: 1em;
+
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+     -moz-user-select: none; /* Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+          user-select: none; /* Non-prefixed version, currently
+                                supported by Chrome and Opera */
 }
 
 body {
-  font-family: "Cerebri-Regular", sans-serif;
+  font-family: "Avenir-Medium", sans-serif;
   margin: 0 auto;
 }
 
-.logo {
-  width: 3em;
-  position: fixed;
-  margin-bottom: 0;
-  margin-top: -5px;
-  margin-left: 40px;
-  margin-right: 0;
-  z-index: 100;
-}
-
-nav {
-  transition: all 0.6s ease-out;
-  display: block;
-  position: fixed;
+header {
+  position: absolute;
+  display: flex;
   top: 0;
-  font-size: 14px;
-  z-index: 99;
-  padding-top: 20px;
-  width: 100%;
-  padding-bottom: 10px;
-  background-color: white;
-  padding-right: 20px;
+  left: 0;
+  right: 0;
+  justify-content: space-between;
+  margin: 3% 4%;
+  z-index: 50;
+  transition: all 0.6s ease-out;
 }
 
-.nav--link {
-  text-align: right;
+.header-logo img {
+  width: 7em;
+  position: absolute;
 }
 
-nav a {
-  font-family: "Cerebri-Bold", sans-serif;
-  text-decoration: none;
-  padding: 20px 0;
-  color: #0C716B;
-  font-size: 1.2em;
-  display: inline-block;
-  margin: 0 30px;
-  cursor: pointer;
-  transition: 0.3s;
+.header-links ul {
+  left: auto;
+  max-width: none;
   position: relative;
+  top: auto;
+  transform: none;
+  width: auto;
+  list-style: none;
+  text-align: right;
+  font-family: "Avenir-Heavy";
 }
 
-nav a::before, nav a::after {
+.header-links li {
+  display: inline-block;
+  position: relative;
+  margin: 0 25px;
+}
+
+.header-links__link {
+  text-decoration: none;
+  cursor: pointer;
+  color: var(--green);
+  transition: 0.3s;
+  padding: 30px 0;
+  font-size: 1.1em;
+}
+
+.header-links__link::before, .header-links__link::after {
   content: '';
   position: absolute;
-  bottom: 10px;
+  bottom: -5px;
   left: 0;
   right: 0;
   height: 2px;
-  background-color: #0C716B;
+  background-color: var(--green);
 }
 
-nav a::before {
+.header-links__link::before {
   opacity: 0;
   -webkit-transform: translateY(-8px);
           transform: translateY(-8px);
@@ -95,173 +104,93 @@ nav a::before {
   transition: transform 0s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0s, -webkit-transform 0s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-nav a::after {
+.header-links__link::after {
   opacity: 0;
   -webkit-transform: translateY(4px);
           transform: translateY(4px);
-  transition: opacity 0.2s, -webkit-transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.2s;
-  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.2s, -webkit-transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: opacity 0.3s, -webkit-transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s, -webkit-transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-nav a:hover::before, nav a:hover::after {
+.header-links__link:hover::before, .header-links__link:hover::after {
   opacity: 1;
   -webkit-transform: translateY(0);
           transform: translateY(0);
 }
 
-.project--link:hover::before {
-  transition: opacity 0.2s, -webkit-transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.2s;
-  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.2s, -webkit-transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.project--link:hover::after {
-  transition: opacity 0s 0.2s, -webkit-transform 0s 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  transition: transform 0s 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0s 0.2s;
-  transition: transform 0s 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0s 0.2s, -webkit-transform 0s 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-nav.change {
-  box-shadow: 0px 0px 3px #969696;
-  transition: all ease .2s;
-}
-
-.active {
-  transition: all ease .2s;
-  color: #212121;
-}
-
 /* Container */
-.container {
-  margin-top: 200px;
+.home--container {
+  display: grid;
+  height: 150vh;
 }
 
-/* Introduction */
-.intro {
-  height: calc(100vh - 50px);
-  margin-top: 100px;
+.home--div {
   margin: 0 auto;
+  align-self: center;
   text-align: center;
-}
-
-.intro--heading {
-  font-family: "Cerebri-Bold", sans-serif;
-  text-align: center;
-  margin-bottom: 10px;
   margin-top: 7%;
-  font-size: 2.5em;
+  grid-template-rows: 50% 100%;
 }
 
-.intro--background {
-  position: absolute;
-  margin: 0 auto;
+.home--title {
+  font-family: "Avenir-Black";
+  font-size: 3.35em;
+  color: #FFBA49;
+  margin-bottom: 1%;
 }
 
-.intro--description {
-  font-family: "Cerebri-Book", sans-serif;
+.home--subtitle {
+  font-weight: 300;
+  font-size: 1.2em;
+  letter-spacing: 1px;
+  margin-top: 0;
 }
 
-.intro--image {
-  max-width: 50%;
+.home--background {
+  width: 100%;
+  justify-self: center;
 }
 
 
-/* Features */
-.features {
-  min-height: calc(100% - 50px);
-  color: #0C716B;
-  margin: 20% 13%;
-}
-
-.features--feature {
-  margin-bottom: 500px;
-}
-
-.features--heading {
-  font-size: 1.8em;
-  font-family: "Cerebri-Bold", sans-serif;
-  border-bottom: 10px solid #0C716B;
-  line-height: 0;
-  display: inline-block;
-  margin-bottom: 40px;
+/* Quick Features */
+.features--container {
+  display: grid;
 }
 
 .features--title {
-  font-family: 'BebasNeue-Regular', sans-serif;
-  letter-spacing: 4px;
-  font-size: 2.3em;
-  margin-right: 50px;
+  align-self: center;
+  text-align: center;
+  font-family: "Avenir-Black";
+  font-size: 3.2em;
+  color: var(--green);
+  margin-bottom: 0;
+  margin-top: -2%;
+  letter-spacing: 5px;
 }
 
-.features--description {
-  font-family: 'CerebriSans-Book', sans-serif;
-  line-height: 25px;
-  font-size: 1.1em;
+.features--subtitle {
+  align-self: center;
+  text-align: center;
+  color: #212121;
+  font-size: 1.2em;
+  letter-spacing: 1px;
+  margin-top: 0;
+  margin-bottom: 8%;
 }
 
-.features--odd .features--description {
-  margin-left: 54%;
-  max-width: 500px;
+.features--image {
+  width: 100%;
+  justify-self: center;
 }
-
-.features--even .features--description {
-  max-width: 500px;
-  margin-left: 3%;
-}
-
-.features--description {
-  margin: 10px 0;
-}
-
-.features--odd .feature--image {
-  max-width: 28%;
-  float: left;
-  margin: 0 100px;
-}
-
-.features--odd .feature--number {
-  max-width: 5%;
-  float: left;
-  margin: 10px 0;
-}
-
-.features--even .feature--image {
-  max-width: 28%;
-  float: right;
-  margin: 0 100px;
-}
-
-.features--even .feature--number {
-  max-width: 5%;
-  float: right;
-}
-
-
-/* About */
-/* .about-us {
-  min-height: calc(100% - 50px);
-  margin: 13%;
-}
-
-.about--heading {
-  font-size: 1.8em;
-  font-family: "Cerebri-Bold", sans-serif;
-  border-bottom: 10px solid #0C716B;
-  line-height: 0;
-  display: inline-block;
-  margin-bottom: 20px;
-  color: #0C716B;
-} */
 
 
 /* Footer */
 .footer--div {
   width: 100%;
   text-align: center;
-  color: #fff;
-  background-color: #0C716B;
-  height: 35vh;
+  color: var(--green);
+  height: 30vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -269,20 +198,16 @@ nav.change {
 
 .contact--link {
   text-decoration: none;
-  color: #fff;
-}
-
-.contact--link:hover {
-  color: #FFCA74;
-  transition: all ease .2s;
+  font-weight: 700;
+  font-size: 1.2em;
+  margin-bottom: 0;
 }
 
 .footer--div h3 {
   letter-spacing: 2px;
-  margin: 0.1em;
 }
 
 .footer {
-  font-size: 0.8em;
-  margin-top: 1em;
+  font-size: 0.9em;
+  /* margin-top: 1em; */
 }
