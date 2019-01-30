@@ -28,17 +28,8 @@
 
 <body>
   <script>
+    document.body.className = 'fade';
     $(document).ready(function() {
-      $("body").css("display", "none");
-      $("body").fadeIn(200);
-      $("a.transition").click(function(event){
-          event.preventDefault();
-          linkLocation = this.href;
-        });
-      function redirectPage() {
-          window.location = linkLocation;
-      }
-
       // Add smooth scrolling to all links
       $("a").on('click', function(event) {
 
@@ -115,6 +106,10 @@
   <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase-database.js"></script>
   <script>
+    document.addEventListener("DOMContentLoaded", function(e) {
+      document.body.className = '';
+    });
+
     // Initialize Firebase
     var config = {
       apiKey: "AIzaSyChXS2OUF1PCnQOf28pnxguc88UCzCJCoU",
@@ -123,6 +118,8 @@
       storageBucket: "p2fsdgastro.appspot.com",
     };
     firebase.initializeApp(config);
+
+    
   </script>
 </body>
 
