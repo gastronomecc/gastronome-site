@@ -1,0 +1,204 @@
+/* CUSTOM FONT FACES */
+@font-face {
+    font-family: "Avenir-Medium";
+    src: url('../assets/fonts/Avenir/Avenir-Medium.ttf');
+}
+
+@font-face {
+    font-family: "Avenir-Heavy";
+    src: url('../assets/fonts/Avenir/Avenir-Heavy.ttf');
+}
+
+@font-face {
+    font-family: "Avenir-Black";
+    src: url('../assets/fonts/Avenir/Avenir-Black.ttf');
+}
+
+:root {
+    --green: #0C716B;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* HTML and BODY */
+html {
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-rendering: optimizeLegibility;
+    font-size: 1em;
+    color: #212121;
+
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                supported by Chrome and Opera */
+    }
+
+body {
+    font-family: "Avenir-Medium", sans-serif;  
+    opacity: 1;
+    transition: 0.7s opacity;
+}
+  
+body.fade {
+    opacity: 0;
+    transition: none;
+}
+
+header {
+    position: absolute;
+    display: flex;
+    top: 0;
+    left: 0;
+    right: 0;
+    justify-content: space-between;
+    margin: 3% 4%;
+    z-index: 50;
+    transition: all 0.6s ease-out;
+}
+
+.header-logo img {
+    width: 7em;
+    position: absolute;
+}
+
+.header-links ul {
+    left: auto;
+    max-width: none;
+    position: relative;
+    top: auto;
+    transform: none;
+    width: auto;
+    list-style: none;
+    text-align: right;
+    font-family: "Avenir-Heavy";
+}
+
+.header-links li {
+    display: inline-block;
+    position: relative;
+    margin: 0 25px;
+}
+
+.header-links__link {
+    text-decoration: none;
+    cursor: pointer;
+    color: var(--green);
+    transition: 0.3s;
+    padding: 30px 0;
+    font-size: 1.1em;
+}
+
+.header-links__link::before, .header-links__link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: var(--green);
+}
+
+.header-links__link::before {
+    opacity: 0;
+    -webkit-transform: translateY(-8px);
+            transform: translateY(-8px);
+    transition: opacity 0s, -webkit-transform 0s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: transform 0s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0s;
+    transition: transform 0s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0s, -webkit-transform 0s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.header-links__link::after {
+    opacity: 0;
+    -webkit-transform: translateY(4px);
+            transform: translateY(4px);
+    transition: opacity 0.3s, -webkit-transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s, -webkit-transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.header-links__link:hover::before, .header-links__link:hover::after {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+}
+
+/* Container */
+.home--container {
+    height: 100vh;
+}
+
+.home--div {
+    margin: 10% 0 5% 0;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 100%;
+}
+
+.image--div {
+    text-align: right;
+}
+
+.home--image {
+    grid-column-start: 2;
+    grid-row-start: 1;
+    width: 100%;
+    max-height: 550px;
+    object-fit: cover;
+    border-radius: 30px 0 0 30px;
+}
+
+.home--title {
+    grid-column-start: 1;
+    grid-row-start: 1;
+    font-family: "Avenir-Black";
+    font-size: 5em;
+    max-width: 80%;
+    color: #F8CF6C;
+    align-self: center;
+    justify-self: center;
+    text-align: right;
+    line-height: 110%;
+}
+
+/* Footer */
+.footer--div {
+    width: 100%;
+    text-align: center;
+    color: var(--green);
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contact--link {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.2em;
+    margin-bottom: 0;
+}
+
+.contact--link a {
+    text-decoration: none;
+    color: var(--green);
+}
+
+.contact--link a:hover {
+    color: #78B3B3;
+    transition: 0.3s;
+}
+
+
+.footer--div h3 {
+    letter-spacing: 2px;
+}
+
+.footer {
+    font-size: 0.9em;
+    /* margin-top: 1em; */
+}
