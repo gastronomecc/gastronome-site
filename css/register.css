@@ -1,0 +1,184 @@
+/* Container */
+.home--container {
+    display: grid;
+}
+
+.home--div {
+    margin: 0 auto;
+    margin-top: 10%;
+    text-align: center;
+}
+
+.home--title {
+    font-family: "Avenir-Black";
+    font-size: 2.8em;
+    margin-bottom: 2%;
+}
+
+.home--subtitle {
+    font-weight: 300;
+    font-size: 1.3em;
+    letter-spacing: 0.5px;
+    margin-top: 0;
+    margin-bottom: 10%;
+}
+
+/* Button  */
+.button {
+    margin-top: 20vh;
+    font-size: 1.3em;
+    font-weight: 900;
+    text-decoration: none;    
+    color: var(--green);
+    letter-spacing: 0.1rem;
+    transition: all 0.2s ease;
+}
+
+.button:before {
+    content: "";
+    position: absolute;
+    display: block;
+    border-radius: 28px;
+    max-width: 56px;
+    max-height: 56px;
+    transition: all 0.3s ease;
+    }
+
+.button svg {
+    position: relative;
+    top: 0;
+    margin-left: 10px;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: #FFBA49;
+    stroke-width: 2;
+    transform: translateX(-5px);
+    transition: all 0.3s ease;
+}
+
+.button:hover:before {
+    width: 100%;
+}
+
+.button:hover svg {
+    transform: translateX(0);
+}
+
+.button:active {
+    transform: scale(0.96);
+}
+
+/* Register Form */
+.register--container {
+    margin: 0 auto;
+    width: 90%;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #E7E7E7;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin-bottom: 3%;
+}
+
+.rectangle {
+    grid-column-start: 1;
+    border-radius: 5px 0 0 5px;
+    background-color: #FFBA49;
+    display: grid;
+}
+
+.register--image {
+    width: 80%;
+    margin: 0 auto;
+    align-self: center;
+    justify-self: center;
+    text-align: center;
+}
+
+.register--form--div {
+    grid-column-start: 2;
+    margin: 20% 18%;
+}
+
+.register--form {
+    align-self: center;
+    justify-self: center;
+}
+
+label {
+    font-family: "Avenir-Black";
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    display:inline-block;
+    margin-bottom: 4px;
+}
+
+input[type=email], input[type=password] {
+    width: 100%;
+    height: 70px;
+    padding: 20px;
+    border-radius: 3px;
+    background-color: #F5F5F5;
+    border: 2px solid #F5F5F5;
+}
+
+#register {
+    background-color: #FFBA49;
+    color: #fdfdfd;
+    border-radius: 5px;
+    width: 100%;
+    height: 55px;
+    margin: 0 auto;
+    border-style: none;
+    margin-top: 15px;
+    font-family: "Avenir-Black";
+    letter-spacing: 1px;
+    font-size: 0.9em;
+    outline: none;
+}
+
+#register:hover {
+    background-color: #FFDBA1;
+    transition: 0.3s;
+}
+
+input[type=email]:focus, input[type=password]:focus {
+    outline: none;
+    transition: 0.3s;
+    border: 2px solid #1D7670;
+}
+
+input[type=email]:not(:focus), input[type=password]:not(:focus) {
+    outline: none;
+    transition: 0.3s;
+    /* border: 2px solid #F3534A; */
+}
+
+.error--message--email {
+    font-family: "Avenir-Heavy";
+    color:#F3534A;
+    font-size: 0.9em;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    visibility: hidden;
+}
+
+.error--message--password {
+    font-family: "Avenir-Heavy";
+    color:#F3534A;
+    font-size: 0.9em;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    visibility: hidden;
+}
+
+.subtitle {
+    text-align: center;
+    font-family: "Avenir-Medium";
+    font-size: 0.9em;
+}
+
+.subtitle a {
+    text-decoration-color: #1D7670;
+    color: #1D7670;
+}

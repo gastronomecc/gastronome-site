@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Meal planning for everyone. A healthy lifestyle for all. ✨">
+
+  <meta name="og:type" content="website">
+  <meta name="og:title" content="Gastronome">
+  <meta name="og:description" content="Meal planning for everyone. A healthy lifestyle for all. ✨">
+  <meta name="og:url" content="https://www.gastronome.cc/">
+
+  <meta name="twitter:card" content="website">
+  <meta name="twitter:title" content="Gastronome">
+  <meta name="twitter:description" content="Meal planning for everyone. A healthy lifestyle for all. ✨">
+  <meta name="twitter:url" content="https://www.gastronome.cc/">
+
+  <link rel="shortcut icon" type="image/png" href="assets/images/favicon.png"/>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/register.css">
+  <link rel="stylesheet" href="css/normalize.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="scripts/auth.js"></script>
+
+  <title>Gastronome - Register</title>
+</head>
+
+<body>
+    <script>
+    document.body.className = 'fade';
+    </script>
+
+  <!-- Navigation -->
+    <header>
+        <!-- Logo -->
+        <span class="header-logo">
+        <a href="index.html"><img src="assets/images/logo.png" alt="logo" class="logo"/></a>
+        </span>
+
+        <!-- Links -->
+        <div class="header-links">
+            <ul>
+                <li><a class="header-links__link" href="features.html">Features</a></li>
+                <li><a class="header-links__link" href="recipes.html">Recipes</a></li>
+                <li><a class="register--button" href="register.html">Register</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="home--container">
+        <div class="home--div">
+            <div class="home--text">
+                <h1 class="home--title">Let's get started</h1>
+                <p class="home--subtitle">Kickstart your journey with Gastronome.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="register--container">
+        <div class="rectangle">
+            <img class="register--image" src="assets/images/register.svg" alt="Register">
+        </div>
+        <div class="register--form--div">
+            <form id="register--form" action="home.html" method="get">
+                <label for="email">EMAIL ADDRESS</label><br>
+                <input type="email" name="email" id="email" size="30" maxlength="100" required autocomplete="off"><br>
+                <p class="error--message--email">Please enter a valid email address.</p>
+                <label for="password">SET A PASSWORD</label><br>
+                <input type="password" name="password" id="password" autocomplete="off"><br>
+                <p class="error--message--password">Please enter a password.</p>
+
+                <input type="button" id="register" name="submit--button" value="REGISTER">
+                <p class="subtitle">or log in <a href="login.html">here.</a></p>
+            </form>
+        </div>
+    </div>
+
+    <div class="footer--div">
+        <p class="contact--link"><a href="mailto:hello@gastronome.cc?Subject=Hello%20there!" target="_top">hello [at] gastronome.cc</a></p>
+        <p class="footer">&copy;  Gastronome, <script>document.write(new Date().getFullYear())</script></p>
+    </div>
+  
+    <script>
+        document.addEventListener("DOMContentLoaded", function(e) {
+            document.body.className = '';
+        });
+    </script>
+</body>
+
+</html>
