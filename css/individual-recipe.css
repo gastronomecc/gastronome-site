@@ -193,10 +193,9 @@ header {
 }
 
 .recipe--details {
-    margin: 5% 12%;
+    margin: 5% 12% auto 16%;
     display: grid;
     grid-template-columns: 50% 50%;
-    grid-template-rows: 65% 20%;
 }
 
 .recipe--details h1 {
@@ -211,12 +210,12 @@ header {
 }
 
 .recipe--ingredients, .recipe--instructions, .recipe--nutrition {
-    padding: 0 30px 30px 30px;
+    padding: 0 30px 30px 0;
     font-size: 1.1em;
-    line-height: 200%;
+    line-height: 220%;
 }
 
-.recipe--ingredients ul, .recipe--instructions ol, .recipe--nutrition ul {
+.recipe--ingredients ul, .recipe--instructions ol {
     list-style-position: outside;
     margin: 0;
     padding: 0;
@@ -226,14 +225,14 @@ header {
     position: relative; left: 6px; 
 }
 
-.recipe--instructions {
-    grid-row: 2;
+.recipe--nutrition p {
+    display: inline;
+    font-weight: 300;
 }
 
-.recipe--nutrition {
-    grid-row-start: 2;
+.recipe--nutrition h3 {
+    font-size: 1.2em;
 }
-
 
 /* Footer */
 .footer--div {

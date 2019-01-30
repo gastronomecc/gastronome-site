@@ -27,6 +27,33 @@
 </head>
 
 <body>
+    <script>
+        document.body.className = 'fade';
+        $(document).ready(function() {
+            // Add smooth scrolling to all links
+            $("a").on('click', function(event) {
+
+            // Make sure this.hash has a value before overriding default behavior
+            if (this.hash !== "") {
+                // Prevent default anchor click behavior
+                event.preventDefault();
+
+                // Store hash
+                var hash = this.hash;
+
+                // Using jQuery's animate() method to add smooth page scroll
+                // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                $('html, body').animate({
+                scrollTop: $(hash).offset().top
+                }, 800, function(){
+
+                    // Add hash (#) to URL when done scrolling (default click behavior)
+                    window.location.hash = hash;
+                    });
+                } // End if
+            });
+        });
+    </script>
   <!-- Navigation -->
   <header>
     <!-- Logo -->
@@ -76,7 +103,14 @@
 
                 <div class="nutrition--container">
                     <h1>Nutrition</h1>
-                    <div class="recipe--nutrition"></div>
+                    <div class="recipe--nutrition">
+                        <h3 class="nutrition--name">Calories ————————— <p class="calories"></p></h3>
+                        <h3 class="nutrition--name">Carbohydrates —————— <p class="carbs"></p></h3>
+                        <h3 class="nutrition--name">Proteins ————————— <p class="proteins"></p></h3>
+                        <h3 class="nutrition--name">Fats ——————————— <p class="fats"></p></h3>
+                        <h3 class="nutrition--name">Sugar —————————— <p class="sugar"></p></h3>
+                        <h3 class="nutrition--name">Salt ——————————— <p class="salt"></p></h3>
+                    </div>
                 </div>
             </div>
         </div>

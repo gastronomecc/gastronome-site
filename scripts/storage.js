@@ -13,17 +13,24 @@ function retrieveData() {
     ref.on('value', function(snapshot) {
         snapshot.forEach(function(childSnapshot) {
             var value = childSnapshot.val();
-
-            var nutrition = [value.calories, value.carbs, value.protein, value.fats, value.salt, value.sugar];
             pageIndex += 1;
 
             var object = {
+                // recipe details
                 name: value.title, 
                 description: value.shortDesc, 
                 image: value.imageURL,
                 ingredients: value.ingredients,
                 instructions: value.instructions,
-                nutrition: nutrition,
+                // nutrition
+                calories: value.calories,
+                carbs: value.carbs,
+                protein: value.protein,
+                fats: value.fats,
+                salt: value.salt,
+                sugar: value.sugar,
+
+                // page index
                 pageIndex: pageIndex
             }
             recipes.push(object);
@@ -125,7 +132,12 @@ function displayRecipeInformation(recipes) {
             var recipeDescription = recipes[i].description;
             var recipeIngredients = recipes[i].ingredients;
             var recipeInstructions = recipes[i].instructions;
-            var recipeNutrition = recipes[i].nutrition;
+            var calories = recipes[i].calories;
+            var carbs = recipes[i].carbs;
+            var protein = recipes[i].protein;
+            var fats = recipes[i].fats;
+            var salt = recipes[i].salt;
+            var sugar = recipes[i].sugar;
             break;
         }
     }
@@ -147,20 +159,26 @@ function displayRecipeInformation(recipes) {
     // Recipe Ingredients
     $(".recipe--ingredients").append(makeUL(recipeIngredients));
     $(".recipe--instructions").append(makeOL(recipeInstructions));
-    $(".recipe--nutrition").append(makeUL(recipeNutrition));
+
+    // Recipe Nutrition
+    $(".calories").html(calories);
+    $(".carbs").html(carbs);
+    $(".proteins").html(protein);
+    $(".fats").html(fats)
+    $(".sugar").html(sugar);
+    $(".salt").html(salt);
 }
 
-
+// making lists
 function makeUL(array) {
     // Create the list element:
     var list = document.createElement('ul');
 
     for(var i = 0; i < array.length; i++) {
-        var item = document.createElement('span');
+        var item = document.createElement('li');
         item.appendChild(document.createTextNode(array[i]));
         list.appendChild(item);
     }
-    $(".recipe--details span").wrap("<li></li>");
 
     return list;
 }
@@ -170,11 +188,10 @@ function makeOL(array) {
     var list = document.createElement('ol');
 
     for(var i = 0; i < array.length; i++) {
-        var item = document.createElement('span');
+        var item = document.createElement('li');
         item.appendChild(document.createTextNode(array[i]));
         list.appendChild(item);
     }
-    $(".recipe--details span").wrap("<li></li>");
 
     return list;
 }
