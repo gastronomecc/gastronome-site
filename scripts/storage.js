@@ -63,7 +63,7 @@ function displayAllRecipes(recipes) {
         contentDescription.setAttribute("class", "recipe--desc--div");
 
         var img2 = new Image();
-        img2.src = "assets/images/food/tags.png";
+        img2.src = "assets/images/tags.png";
         img2.setAttribute("class", "recipe--tags");
 
         contentDiv.appendChild(img1);
