@@ -25,14 +25,16 @@
 
 /* Button  */
 .button {
-    margin-top: 20vh;
-    font-size: 1.3em;
+    font-size: 0.9em;
     font-weight: 900;
     text-decoration: none;    
-    color: var(--green);
-    letter-spacing: 0.1rem;
+    color: #fdfdfd;
+    background-color: var(--green);
+    padding: 15px 35px;
+    border-radius: 80px;
     transition: all 0.2s ease;
 }
+
 
 .button:before {
     content: "";
@@ -172,13 +174,13 @@ input[type=email]:not(:focus), input[type=password]:not(:focus) {
     visibility: hidden;
 }
 
-.subtitle {
+.login--here {
+    margin: 8%;
     text-align: center;
-    font-family: "Avenir-Medium";
-    font-size: 0.9em;
+    font-family: "Avenir-Black";
 }
 
-.subtitle a {
-    text-decoration-color: #1D7670;
-    color: #1D7670;
+.login--sub {
+    font-size: 1.2em;
+    margin-bottom: 3%;
 }

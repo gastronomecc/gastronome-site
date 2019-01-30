@@ -22,7 +22,6 @@
   <link rel="stylesheet" href="css/normalize.css">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <script src="scripts/auth.js"></script>
 
   <title>Gastronome - Login</title>
 </head>
@@ -70,7 +69,7 @@
 
                 <p class="subtitle"><a href="">Forgot password?</a></p>
 
-                <input type="button" id="login" name="submit--button" value="LOG IN">
+                <input type="button" id="login" name="submit--button" value="LOG IN" onclick="toggleSignIn()">
             </form>
         </div>
     </div>
@@ -90,11 +89,25 @@
         <p class="footer">&copy;  Gastronome, <script>document.write(new Date().getFullYear())</script></p>
     </div>
   
+    <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase-database.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", function(e) {
-            document.body.className = '';
-        });
+      document.addEventListener("DOMContentLoaded", function(e) {
+        document.body.className = '';
+      });
+  
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyChXS2OUF1PCnQOf28pnxguc88UCzCJCoU",
+        authDomain: "p2fsdgastro.firebaseapp.com",
+        databaseURL: "https://p2fsdgastro.firebaseio.com",
+        projectId: "p2fsdgastro",
+        storageBucket: "p2fsdgastro.appspot.com",
+      };
+      firebase.initializeApp(config);
     </script>
+    <script src="scripts/auth.js"></script>
 </body>
 
 </html>
