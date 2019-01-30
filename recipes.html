@@ -20,22 +20,9 @@
   <link rel="stylesheet" href="css/recipes.css">
   <link rel="stylesheet" href="css/normalize.css">
 
-  <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase-database.js"></script>
-  <script>
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyChXS2OUF1PCnQOf28pnxguc88UCzCJCoU",
-      databaseURL: "https://p2fsdgastro.firebaseio.com",
-      projectId: "p2fsdgastro",
-      storageBucket: "p2fsdgastro.appspot.com",
-    };
-    firebase.initializeApp(config);
-  </script>
-
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-  <script src="scripts/nav-scroll.js"></script>
+  <script src="scripts/storage.js"></script>
 
   <title>Gastronome - All Our Recipes</title>
 </head>
@@ -113,11 +100,10 @@
   </div>
 
   <div id="recipes--container">
-    <div class="recipes--img--div">
-        <img class="recipes--img" src="assets/images/circle-logo.png" alt="food-bg"/>
+    <div class="recipes--logo--div">
+        <img class="recipes--logo" src="assets/images/circle-logo.png" alt="food-bg"/>
     </div>
-    <div class="content">
-        <img class="recipes--gallery" src="assets/images/food-gallery.png" alt="food-bg"/>
+    <div id="content--container">
     </div>
   </div>
 
@@ -126,6 +112,19 @@
     <p class="contact--link">hello [at] gastronome.cc</p>
     <p class="footer">&copy;  Gastronome, <script>document.write(new Date().getFullYear())</script></p>
   </div>
+
+  <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase-database.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyChXS2OUF1PCnQOf28pnxguc88UCzCJCoU",
+      databaseURL: "https://p2fsdgastro.firebaseio.com",
+      projectId: "p2fsdgastro",
+      storageBucket: "p2fsdgastro.appspot.com",
+    };
+    firebase.initializeApp(config);
+  </script>
 </body>
 
 </html>

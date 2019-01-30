@@ -194,21 +194,68 @@ header {
 
 
 /* Recipes */
-.recipes--container {
-    display: grid;
+#recipes--container {
+    margin: 3%;
 }
 
-.recipes--img--div {
+.recipes--logo--div {
     text-align: center;
 }
 
-.recipes--img {
-    max-width: 20%;
+.recipes--logo {
+    max-width: 25%;
 }
 
-.recipes--gallery {
-    max-width: 100%;
+#content--container {
+    text-align: center;
+    vertical-align: top;
+}
+
+.content--recipe {
+    width: 30.5%;   
+    border-radius: 10px;
+    box-shadow: 3px 3px 20px #E7E7E7;
+    display: inline-block;
+    margin: 1%;
     cursor: pointer;
+    vertical-align: top;
+}
+
+.recipe--text--div {
+    margin: 8%;
+}
+
+.recipe--name {
+    font-size: 1.15em;
+    font-family: "Avenir-Black";
+    margin-bottom: 10px;
+}
+
+.recipe--desc--div {
+    width: 100%;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.recipe--desc {
+    margin-top: 0;
+    font-size: 0.9em;
+    margin-bottom: -1px;
+    letter-spacing: 0.5px;
+}
+
+.recipe--tags {
+    width: 65%;
+    margin-bottom: 3%;
+}
+
+.recipe--img {
+    width: 100%;
+    max-height: 400px;
+    border-radius: 10px 10px 0 0;
+    object-fit: cover;
 }
 
 /* Footer */
