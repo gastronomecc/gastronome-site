@@ -117,8 +117,6 @@ function displayRecipeInformation(recipes) {
     url_string = window.location.href;
     var url = new URL(url_string);
     var currentIndex = url.searchParams.get("index");
-    console.log("first Index: " + currentIndex);
-
 
     for (var i = 0; i < recipes.length; i++) {
         if (currentIndex == i) {
@@ -129,38 +127,55 @@ function displayRecipeInformation(recipes) {
             var recipeInstructions = recipes[i].instructions;
             var recipeNutrition = recipes[i].nutrition;
             break;
-
-            // ------------------- HOME CONTAINER -------------------
-            // var homeDiv = document.createElement("div");
-            // homeDiv.setAttribute("class", "home--div");
-
-            // // Adding a recipe image
-            // var img1 = new Image();
-            // img1.src = recipes[i].image;
-            // img1.setAttribute("class", "home--img");
-
-            // // Adding the title text
-            // var node1 = document.createElement("h1");
-            // var textnode1 = document.createTextNode(recipeTitle);
-            // node1.appendChild(textnode1);
-            // node1.setAttribute("class", "home--title");
-
-            // homeDiv.appendChild(img1);
-            // homeDiv.appendChild(node1);
-
-            // $(".home--container").append(homeDiv);
-
-            // ------------------- INSTRUCTIONS CONTAINER -------------------
-
         }
     }
 
+    // Recipe Name
     $(".home--title").html(recipeTitle);
-    $(".home--image").attr("src", recipeImage);
-    console.log(recipeImage);
 
+    // Recipe Image
+    $(".home--image").attr("src", recipeImage);
     $(".home--image").prop("alt", recipeTitle);
-    $(".recipe--ingredients").html(recipeIngredients);
-    $(".recipe--instructions").html(recipeInstructions);
-    $(".recipe--nutrition").html(recipeNutrition);
+
+    // Recipe Tag
+    $(".recipe--tags").attr("src", "assets/images/tags.png");
+    $(".recipe--tags").prop("alt", "tags");
+    
+    // Recipe Description
+    $(".recipe--desc").html(recipeDescription);
+    
+    // Recipe Ingredients
+    $(".recipe--ingredients").append(makeUL(recipeIngredients));
+    $(".recipe--instructions").append(makeOL(recipeInstructions));
+    $(".recipe--nutrition").append(makeUL(recipeNutrition));
 }
+
+
+function makeUL(array) {
+    // Create the list element:
+    var list = document.createElement('ul');
+
+    for(var i = 0; i < array.length; i++) {
+        var item = document.createElement('span');
+        item.appendChild(document.createTextNode(array[i]));
+        list.appendChild(item);
+    }
+    $(".recipe--details span").wrap("<li></li>");
+
+    return list;
+}
+
+function makeOL(array) {
+    // Create the list element:
+    var list = document.createElement('ol');
+
+    for(var i = 0; i < array.length; i++) {
+        var item = document.createElement('span');
+        item.appendChild(document.createTextNode(array[i]));
+        list.appendChild(item);
+    }
+    $(".recipe--details span").wrap("<li></li>");
+
+    return list;
+}
+

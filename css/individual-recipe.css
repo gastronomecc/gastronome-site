@@ -132,7 +132,7 @@ header {
 }
 
 .home--div {
-    margin: 10% 0 5% 0;
+    margin: 10% 0 0 0;
     text-align: center;
     display: grid;
     grid-template-columns: 50% 50%;
@@ -163,7 +163,77 @@ header {
     justify-self: center;
     text-align: right;
     line-height: 110%;
+    letter-spacing: 2px;
+    margin-top: -1%;
 }
+
+/* RECIPE DETAILS */
+.tags--div {
+    text-align: center;
+}
+
+.recipe--tags {
+    margin-top: -20px;
+    width: 23%;
+}
+
+.recipe--desc--container {
+    width: 100%;
+    background-color: #F9FAFA;
+    padding: 75px;
+    margin: 30px 0;
+    text-align: center;
+}
+
+.recipe--desc {
+    /* font-family: "Avenir-Heavy"; */
+    font-size: 1.2em;
+    width: 55%;
+    margin: 0 auto;
+}
+
+.recipe--details {
+    margin: 5% 12%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 65% 20%;
+}
+
+.recipe--details h1 {
+    font-size: 2.8em;
+    font-family: "Avenir-Black";
+    letter-spacing: 1px;
+    margin-bottom: 3%;
+}
+
+.ingredients--container, .instructions--container, .nutrition--container {
+    margin: 15px;
+}
+
+.recipe--ingredients, .recipe--instructions, .recipe--nutrition {
+    padding: 0 30px 30px 30px;
+    font-size: 1.1em;
+    line-height: 200%;
+}
+
+.recipe--ingredients ul, .recipe--instructions ol, .recipe--nutrition ul {
+    list-style-position: outside;
+    margin: 0;
+    padding: 0;
+}
+
+.recipe--details li span {
+    position: relative; left: 6px; 
+}
+
+.recipe--instructions {
+    grid-row: 2;
+}
+
+.recipe--nutrition {
+    grid-row-start: 2;
+}
+
 
 /* Footer */
 .footer--div {
