@@ -25,7 +25,9 @@
 /* HTML and BODY */
 html {
     -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
     -webkit-text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale; // fix fatty ff on mac
     font-size: 1em;
     color: #212121;
 
