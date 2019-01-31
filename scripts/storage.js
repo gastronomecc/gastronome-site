@@ -39,7 +39,7 @@ function retrieveData() {
         var url = location.pathname;
         var filename = url.substring(url.lastIndexOf('/')+1);
     
-        if (filename === "recipes.html") {
+        if (filename === "recipes.html" || filename=="home.html") {
             displayAllRecipes(recipes);
         }
         else {
@@ -91,9 +91,19 @@ function displayAllRecipes(recipes) {
         img2.src = "assets/images/tags.png";
         img2.setAttribute("class", "recipe--tags");
 
+        var img3 = new Image();
+        img3.src = "assets/images/favourites-icon.png";
+        img3.setAttribute("class", "favourites--icon");
+
+        var url = location.pathname;
+        var filename = url.substring(url.lastIndexOf('/')+1);
+
         contentDiv.appendChild(img1);
         recipeTextDiv.appendChild(recipeNameDiv);
         recipeTextDiv.appendChild(img2);
+        if (filename === "home.html") {
+            recipeTextDiv.appendChild(img3);
+        }
         recipeTextDiv.appendChild(contentDescription);
 
         contentDiv.appendChild(recipeTextDiv);

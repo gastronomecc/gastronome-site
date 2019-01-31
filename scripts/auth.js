@@ -12,7 +12,6 @@ function toggleSignIn() {
             console.error('Sign Out Error', error);
         });
         // [END SIGNOUT]
-
       } else {
             var email = document.getElementById('email').value;
             var password = document.getElementById('password').value;
@@ -43,7 +42,7 @@ function toggleSignIn() {
         });
         // [END AUTHENTICATION WITH EMAIL]
     }
-    document.getElementById('register').disabled = true;
+    // document.getElementById('register').disabled = true;
 }
 
 
@@ -157,7 +156,7 @@ function initApp() {
     if (el3) {
         document.getElementById('sign-out').addEventListener('click', handleSignOut, false);
     }
-    //
+    
     // document.getElementById('verify-email').addEventListener('click', sendEmailVerification, false);
     // document.getElementById('password-reset').addEventListener('click', sendPasswordReset, false);
 }
@@ -169,18 +168,18 @@ window.onload = function() {
 /* FIREBASE DATABASE */
 function writeUserData() {
     var email = document.getElementById('email').value;
-    // var name = document.getElementById('name').value;
+    var name = document.getElementById('name').value;
 
     firebase.database().ref('Users/').push({
-        email: email
-        // name: name
+        email: email,
+        name: name
     });
 }
 
-// function updateUserData() { // for edit
-//     var name = document.getElementById('name').value;
+function updateUserData() { // for edit
+    var name = document.getElementById('name').value;
 
-//     firebase.database().ref('Users/' + user.uid).update({
-//         username: name,
-//     });
-// }
+    firebase.database().ref('Users/' + user.uid).update({
+        username: name,
+    });
+}

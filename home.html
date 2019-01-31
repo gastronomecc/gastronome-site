@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Meal planning for everyone. A healthy lifestyle for all. ✨">
+
+  <meta name="og:type" content="website">
+  <meta name="og:title" content="Gastronome">
+  <meta name="og:description" content="Meal planning for everyone. A healthy lifestyle for all. ✨">
+  <meta name="og:url" content="https://www.gastronome.cc/">
+
+  <meta name="twitter:card" content="website">
+  <meta name="twitter:title" content="Gastronome">
+  <meta name="twitter:description" content="Meal planning for everyone. A healthy lifestyle for all. ✨">
+  <meta name="twitter:url" content="https://www.gastronome.cc/">
+
+  <link rel="shortcut icon" type="image/png" href="assets/images/favicon.png"/>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/normalize.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="scripts/storage.js"></script>
+
+  <title>Gastronome - Recipes</title>
+</head>
+
+<body>
+  <script>
+    document.body.className = 'fade';
+    $(document).ready(function() {
+      // Add smooth scrolling to all links
+      $("a").on('click', function(event) {
+
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+          // Prevent default anchor click behavior
+          event.preventDefault();
+
+          // Store hash
+          var hash = this.hash;
+
+          // Using jQuery's animate() method to add smooth page scroll
+          // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 800, function(){
+
+            // Add hash (#) to URL when done scrolling (default click behavior)
+            window.location.hash = hash;
+          });
+        } // End if
+      });
+    });
+  </script>
+
+  <!-- Navigation -->
+  <header>
+    <!-- Logo -->
+    <span class="header-logo">
+      <a href="index.html"><img src="assets/images/logo.png" alt="logo" class="logo"/></a>
+    </span>
+
+    <!-- Links -->
+    <div class="header-links">
+      <ul>
+        <li><a class="header-links__link" onclick="handleSignOut()">Log Out</a></li>
+        <!-- <li><a class="header-links__link" href="features.html">Features</a></li>
+        <li><a class="header-links__link" href="recipes.html">Recipes</a></li>
+        <li><a class="register--button" href="register.html">Register</a></li> -->
+      </ul>
+    </div>
+  </header>
+
+  <div class="home--container">
+    <div class="home--div">
+      <div class="home--text">
+        <h1 class="home--title">all our recipes</h1>
+        <p class="home--subtitle">add some to your favourites! ✨</p>
+      </div>
+      <div class="home--look">
+          <a class="button" href="#recipes--container">
+              <span>start looking</span>
+              <svg width="20px" height="14px" viewBox="0 0 13 10">
+                <path d="M1,5 L11,5"></path>
+                <polyline points="8 1 12 5 8 9"></polyline>
+              </svg>
+            </a>
+      </div>
+    </div>
+  </div>
+
+  <div id="recipes--container">
+    <div class="recipes--logo--div">
+        <img class="recipes--logo" src="assets/images/circle-logo.png" alt="circle-logo"/>
+    </div>
+    <div id="content--container">
+    </div>
+  </div>
+
+
+  <div class="footer--div">
+    <p class="contact--link"><a href="mailto:hello@gastronome.cc?Subject=Hello%20there!" target="_top">hello [at] gastronome.cc</a></p>
+    <p class="footer">&copy;  Gastronome, <script>document.write(new Date().getFullYear())</script></p>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase-database.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function(e) {
+      document.body.className = '';
+    });
+
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyChXS2OUF1PCnQOf28pnxguc88UCzCJCoU",
+      databaseURL: "https://p2fsdgastro.firebaseio.com",
+      projectId: "p2fsdgastro",
+      storageBucket: "p2fsdgastro.appspot.com",
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script src="scripts/auth.js"></script>
+</body>
+
+</html>
