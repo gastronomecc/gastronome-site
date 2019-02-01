@@ -96,8 +96,8 @@
     box-shadow: 3px 3px 20px #E7E7E7;
     display: inline-block;
     margin: 1%;
-    cursor: pointer;
     vertical-align: top;
+    cursor: pointer;
 }
 
 .recipe--text--div {
@@ -126,6 +126,7 @@
 }
 
 .recipe--tags {
+    margin-top: 5%;
     width: 65%;
     margin-bottom: 3%;
 }
@@ -135,4 +136,5 @@
     max-height: 400px;
     border-radius: 10px 10px 0 0;
     object-fit: cover;
+
 }

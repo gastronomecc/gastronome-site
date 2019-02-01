@@ -94,26 +94,35 @@ function displayAllRecipes(recipes) {
         var img3 = new Image();
         img3.src = "assets/images/favourites-icon.png";
         img3.setAttribute("class", "favourites--icon");
+        // img3.onclick = favouritesList();
 
         var url = location.pathname;
         var filename = url.substring(url.lastIndexOf('/')+1);
 
-        contentDiv.appendChild(img1);
+
         recipeTextDiv.appendChild(recipeNameDiv);
         recipeTextDiv.appendChild(img2);
+        
         if (filename === "home.html") {
             recipeTextDiv.appendChild(img3);
         }
+
         recipeTextDiv.appendChild(contentDescription);
 
+        var recipeImageDiv = document.createElement("div");
+        recipeImageDiv.setAttribute("class", "recipe--image--div")
+        recipeImageDiv.appendChild(img1);
+
+        contentDiv.appendChild(recipeImageDiv);
         contentDiv.appendChild(recipeTextDiv);
 
         // ------------ APPEND WHOLE DIV CONTENT ------------
         $("#content--container").append(contentDiv);
     }
-
+    // $(".favourites--icon").wrap("<a class='favourites--icon--link'></a>");
     findRecipeIndexClicked(); 
 }
+
 
 var index;
 
@@ -126,7 +135,6 @@ function findRecipeIndexClicked() {
         window.location.href = "individual-recipe.html?index=" + index;
     });
 }
-
 
 // Render stuff on individual-recipe.html
 function displayRecipeInformation(recipes) {
@@ -206,3 +214,28 @@ function makeOL(array) {
     return list;
 }
 
+var favouritesArray = [];
+
+function findFavouriteIndex() {
+    $(".favourites--icon").click(function() {
+        var index = $(this).parent().parent().prevAll().length;
+    });    
+
+    return index;
+}
+
+function toggleFavourites() {
+
+}
+
+function addToFavourites() {
+    favouritesArray.push(recipe[index]);
+
+    return favouritesArray;
+}
+
+function removeFromFavourites(index) {
+    favouritesArray.splice( favouritesArray.indexOf(index), 1 );
+
+    return favouritesArray;
+}

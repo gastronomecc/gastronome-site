@@ -34,13 +34,6 @@ html {
     -moz-osx-font-smoothing: grayscale;  /*fix fatty ff on mac */
     font-size: 1em;
     color: #212121;
-  
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-       -moz-user-select: none; /* Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome and Opera */
 }
 
 body {
@@ -89,6 +82,7 @@ header {
     display: inline-block;
     position: relative;
     margin: 0 25px;
+    
 }
   
 .header-links__link {
@@ -109,11 +103,13 @@ header {
     padding: 10px 12px;
     border-radius: 8px;
     font-size: 1.1em;
+    cursor: pointer;
 }
   
 .register--button:hover {
-    background-color: #78B3B3;
-    transition: 0.5s;
+    opacity: 0.7;
+    transition: 0.3s;
+    cursor: pointer;
 }
   
 .header-links__link::before, .header-links__link::after {

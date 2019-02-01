@@ -128,24 +128,32 @@ Called when the user is signed in or out. */
 function initApp() {
     // Listening for auth state changes.
     // [START authstatelistener]
+
+
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
             // User is signed in.
             var name = user.name;
             var email = user.email;
-
+            //var isLoggedin = true;
+            //var isLoggedin = true;
+            window.location.href = "home.html";
             console.log("Logged in");
-            // window.location = "home.html";
         }
         else {
             console.log("Not logged in");
+            //var isLoggedin = false;
         }
     });
+
+     //if (isLoggedin == true){
+         //var isLoggedin = false;
+     //};
 
     // [END authstatelistener]
     var el = document.getElementById('sign-in');
     var el2 = document.getElementById('sign-up');
-    var el3 = document.getElementById('sign-out');
+    var el3 = document.getElementById('log-out');
 
     if (el) {
         document.getElementById('sign-in').addEventListener('click', toggleSignIn, false);
@@ -154,7 +162,7 @@ function initApp() {
         document.getElementById('sign-up').addEventListener('click', handleSignUp, false);
     }
     if (el3) {
-        document.getElementById('sign-out').addEventListener('click', handleSignOut, false);
+        document.getElementById('log-out').addEventListener('click', handleSignOut, false);
     }
     
     // document.getElementById('verify-email').addEventListener('click', sendEmailVerification, false);
